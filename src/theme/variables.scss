@@ -1,2 +1,55 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+//Añadido estilo para que el título de la barra superior se vea más claro
+ion-title{
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+:root {
+    /* Tema claro */
+    --ion-color-primary: #1e88e5;
+    --ion-color-primary-rgb: 30, 136, 229;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #1976d2;
+    --ion-color-primary-tint: #42a5f5;
+  
+    --ion-background-color: #ffffff73;
+    --ion-text-color: #000000;
+
+    --ion-item-background: #ffffff73;
+    --ion-toolbar-background: #ffffff73;
+    --ion-tab-bar-background: #ffffff73;
+    --ion-card-background: #ffffff73;
+  }
+  
+  body.dark {
+    /* Tema oscuro */
+    --ion-color-primary: #9c27b0;
+    --ion-color-primary-rgb: 144, 202, 249;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 13, 71, 161;
+    --ion-color-primary-shade: #64b5f6;
+    --ion-color-primary-tint: #bbdefb;
+  
+    --ion-background-color: #121212;
+    --ion-text-color: #ffffff;
+
+    --ion-item-background: #1e1e1e;
+    --ion-toolbar-background: #1f1f1f;
+    --ion-tab-bar-background: #1f1f1f;
+    --ion-card-background: #1e1e1e;
+
+    /*
+    ion-button {
+        --background: #9c27b0;
+        --background-activated: #7b1fa2;
+        --background-hover: #8e24aa;
+        --color: #fff;
+      }*/
+  }
+
+  ion-content {
+    --background: var(--ion-background-color);
+  }

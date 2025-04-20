@@ -1,0 +1,9 @@
+.bottom-container {
+    margin-top: 30px; // <-- separa el contenido del borde inferior
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; // <-- espacio entre el texto y el botón
+    //align-items: center; // opcional, para centrar el contenido
+  }

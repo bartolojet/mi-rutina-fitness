@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      {{ "TAB3_TITLE" | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,27 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">{{ "TAB3_TITLE" | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-list>
+    <ion-item class="select">
+      <ion-label>{{ "LANGUAGE" | translate }}</ion-label>
+      <ion-select cancelText="{{ 'CANCEL' | translate }}" placeholder="{{ 'SELECT_LANGUAGE' | translate }}" (ionChange)="changeLang($event)">
+        <ion-select-option *ngFor="let lang of langs" value="{{lang}}">{{ lang | translate }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-list>
+    <ion-item class="ion-text-center">
+      <ion-label>{{ "USERNAME" | translate }}</ion-label>
+      <ion-input [(ngModel)]="username" (ionBlur)="saveUsername()" placeholder="{{ 'ENTER_USERNAME' | translate }}"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>{{ "DARK_MODE" | translate }}</ion-label>
+    <ion-toggle [checked]="darkMode" (ionChange)="toggleDarkMode()"></ion-toggle>
+  </ion-item>
 </ion-content>

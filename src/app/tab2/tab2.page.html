@@ -1,17 +1,101 @@
+<!-- Encabezado principal de la página -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      {{ "TAB2_TITLE" | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal de la página -->
 <ion-content [fullscreen]="true">
+    <!-- Propiedad 'fullscreen' hace que el contenido ocupe toda la pantalla -->
+  <!-- Clase 'ion-padding' añade un padding interno para una mejor presentación visual -->
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">{{ "TAB2_TITLE" | translate }}</ion-title>
+          <!-- Título grande en el encabezado condensado para mayor visibilidad -->
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<!-- Formulario para agregar un nuevo hábito -->
+<form [formGroup]="exerciseForm" (ngSubmit)="addExercise()">
+  <!-- [formGroup]="exerciseForm": Vincula el formulario al grupo de formularios reactivos de Angular -->
+  <!-- (ngSubmit)="addExercise()": Ejecuta el método 'addExercise' cuando se envía el formulario -->
+
+  <!-- Campo de entrada para el título del exercise -->
+  <ion-item>
+    <ion-input 
+      formControlName="titulo" 
+      placeholder="{{ 'TITLE_EXERCISE' | translate }}" 
+      [clearInput]="true">
+      <!-- formControlName="titulo": Enlace del campo al control 'titulo' del formulario -->
+      <!-- placeholder="Título": Texto de ayuda dentro del input -->
+      <!-- [clearInput]="true": Permite limpiar el campo con un botón dentro del input -->
+    </ion-input>
+  </ion-item>
+
+  <!-- Campo de entrada para la repeticiones del hábito -->
+  <ion-item>
+    <ion-textarea 
+      formControlName="repeticiones" 
+      placeholder="{{ 'REPS_EXERCISE' | translate }}">
+      <!-- formControlName="repeticiones": Enlace al control 'repetición' del formulario -->
+      <!-- placeholder="Repeticiones": Texto de ayuda dentro del textarea -->
+    </ion-textarea>
+  </ion-item>
+
+  <!-- Botón para seleccionar una imagen -->
+  <ion-item>
+    <ion-button 
+      shape="round" 
+      expand="block" 
+      (click)="seleccionarImagen()">
+      <!-- shape="round": Da bordes redondeados al botón -->
+      <!-- expand="block": Hace que el botón ocupe todo el ancho disponible -->
+      <!-- (click)="seleccionarImagen()": Llama al método para seleccionar una imagen -->
+      {{ "SELECT_IMAGE" | translate}}
+    </ion-button>
+  </ion-item>
+  
+  <!-- Muestra la imagen seleccionada si existe -->
+  <ion-item *ngIf="imagen">
+    <!-- *ngIf="imagen": Renderiza el elemento solo si 'imagen' tiene un valor -->
+    <ion-thumbnail slot="start">
+      <!-- Muestra una miniatura de la imagen -->
+      <img [src]="imagen" alt="Imagen seleccionada">
+      <!-- [src]="imagen": Enlace dinámico para mostrar la imagen seleccionada -->
+      <!-- alt="Imagen seleccionada": Texto alternativo para accesibilidad -->
+    </ion-thumbnail>
+  </ion-item>    
+
+  <!-- Botón para enviar el formulario y agregar el ejercico -->
+  <ion-button 
+    expand="block" 
+    shape="round" 
+    type="submit" 
+    [disabled]="exerciseForm.invalid">
+    <!-- expand="block": El botón ocupa todo el ancho disponible -->
+    <!-- shape="round": Bordes redondeados para mejor apariencia -->
+    <!-- type="submit": Define el tipo de botón para enviar el formulario -->
+    <!-- [disabled]="exerciseForm.invalid": Desactiva el botón si el formulario no es válido -->
+    {{ "ADD_EXERCISE" | translate }}
+  </ion-button>
+</form>
+
+<!-- Botón para añadir 10 ejercicios de ejemplo -->
+<div class="bottom-container">
+  <ion-item lines="none">
+    <ion-label class="ion-text-center" color="medium">
+      <h2>{{ "TAB2_TITLE2" | translate }}</h2>
+    </ion-label>
+  </ion-item>
+
+  <ion-button
+      expand="block"
+      shape="round"
+      (click)="add10Exercises()">
+      {{ "ADD_TEST_EXERCISE" | translate }}
+  </ion-button>
+  </div>
 </ion-content>

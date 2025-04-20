@@ -1,0 +1,22 @@
+{
+    "TAB1_TITLE": "RUTINAS DE",
+    "TAB2_TITLE": "AÑADIR EJERCICIO",
+    "TAB2_TITLE2": "AÑADIR 10 EJERCICIOS",
+    "TAB3_TITLE": "CONFIGURACIÓN",
+    "LANGUAGE": "IDIOMA",
+    "SELECT_LANGUAGE": "SELECCIONAR IDIOMA",
+    "CANCEL": "CANCELAR",
+    "es": "Español",
+    "en": "Inglés",
+    "DELETE": "Eliminar",
+    "ADD_EXERCISE": "Añadir Ejercicio",
+    "ADD_TEST_EXERCISE": "Añadir Ejercicios de muestra",
+    "DELETE_ALL_EXERCISES": "Borrar todos los ejercicios",
+    "USERNAME": "Nombre de Usuario",
+    "DARK_MODE": "Tema Oscuro",
+    "ENTER_USERNAME": "Introduzca nombre de usuario",
+    "TITLE_EXERCISE": "Ejercicio",
+    "REPS_EXERCISE": "Repeticiones",
+    "SELECT_IMAGE": "Selecccionar Imagen"
+
+}
